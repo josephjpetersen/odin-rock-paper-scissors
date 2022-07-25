@@ -1,5 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
+  padding: 0px;
+  margin: 0px;
   font-family: monospace;
+  color: #20c20e;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 23px;
+}
+
+.face {
+  font-size: 42px;
+}
+
+.scores {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+
+.computer-total, .player-total {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+button {
+  background-color: #000000;
+  border-radius: 23px;
+  border: 5px dashed #20c20e;
+  color: white;
+  padding: 0px, 9px, 0px, 0px;
+  min-width: 225px;
+
 }
