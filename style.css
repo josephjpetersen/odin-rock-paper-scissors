@@ -16,6 +16,10 @@ body {
   font-size: 42px;
 }
 
+.speech {
+  padding: 0px 225px 0px 225px;
+}
+
 .scores {
   display: flex;
   flex-direction: column;
@@ -29,12 +33,16 @@ body {
   gap: 9px;
 }
 
+.log {
+  text-align: center;
+}
 button {
   background-color: #000000;
   border-radius: 23px;
-  border: 5px dashed #20c20e;
+  border: 3px dashed #20c20e;
   color: white;
   padding: 0px, 9px, 0px, 0px;
   min-width: 225px;
-
+  max-width: 225px;
+  margin: 10px 10px 0px 10px;
 }
