@@ -29,7 +29,6 @@ body {
   gap: 13px;
 }
 
-
 .computer-total, .player-total {
   font-size: 19px;
   display: flex;
@@ -49,4 +48,8 @@ button {
   min-width: 225px;
   max-width: 225px;
   margin: 10px 10px 0px 10px;
+}
+
+button:hover {
+  border-color: white;
 }

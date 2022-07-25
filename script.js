@@ -91,11 +91,14 @@ function game(playerSelection) {
 
   if (result[1] !== 0 || result[2] !== 0) {
     if (playerScore === 5) { 
-      speech.textContent = ``;
-      face.textContent = '';
+      speech.textContent = `THE LORD OF THE UNKNOWABLE ABOVE PREVAILS!\
+      We would carve a statue of you if it were in any way possible for us to\
+      comprehend your appearance. Will a donation in your name to\
+      Doctors without 2D Borders suffice?`;
+      face.textContent = 'ᵛᵉᵧₒᵤᶫᵒᵛᵉ(♡´౪`♡)ᵧₒᵤᶫᵒᵛᵉᵧₒᵤ';
     } else if (computerScore === 5) {
-      speech.textContent = ``;
-      face.textContent = '';
+      speech.textContent = `The silence is deafening...`;
+      face.textContent = '。。。';
     } else if (playerScore === 4 && computerScore === 4) {
       speech.textContent = `The next win decides the fate of trillions upon\
       trillions of two-dimensional souls... I just can\'t bear to watch!`;
@@ -127,50 +130,3 @@ function game(playerSelection) {
     }
   }
 }
-
-// Old code for game played in console below
-
-/* function game() {
-
-  // Iterate five rounds, compile win records, report results
-
-  let playerWinCount = 0
-  let computerWinCount = 0
-  let roundCount = 1
-
-  for (let i = 0; i < 5; i++) {
-    
-    let playerSelection = prompt ('Rock, Paper, or Scissors? (Spelling matters, case does not.)')
-    let computerSelection = getComputerChoice()
-
-    let roundResult = playRound(playerSelection, computerSelection)
-
-    playerWinCount = playerWinCount + roundResult[1]
-    computerWinCount = computerWinCount + roundResult[2]
-
-    console.log(`Round ${roundCount}: FIGHT!`)
-    console.log(`The Computer chose ${computerSelection}.`)
-    console.log(`You chose ${playerSelection.substring(0,1).toUpperCase()}${playerSelection.substring(1).toLowerCase()}.`)
-    console.log(roundResult[0])
-    console.log(`Computer: ${computerWinCount}  Player: ${playerWinCount}`)
-    console.log('\n')
-
-    roundCount++
-
-  }
-
-  console.log('Final Score:')
-  console.log(`Computer: ${computerWinCount}  Player: ${playerWinCount}`)
-
-  if (playerWinCount > computerWinCount) {
-    console.log('You win! Congrats!')
-  } else if (playerWinCount < computerWinCount) {
-    console.log('You lose! Better luck next time!')
-  } else {
-    console.log('A tie! Your minds are evenly matched.')
-  }
-
-}
-
-game() */
-
