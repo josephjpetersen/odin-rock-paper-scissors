@@ -1,3 +1,23 @@
+const allButtons = Array.from(document.getElementsByTagName('button'));
+const speech = document.querySelector('.speech');
+const playerTotal = document.querySelector('.player-score');
+const computerTotal = document.querySelector('.computer-score');
+const log = document.querySelector('.log');
+
+let roundCount = 1;
+let playerScore = 0;
+let computerScore = 0;
+
+
+allButtons.forEach((button) =>
+  button.addEventListener('click', () => {
+    if (playerScore >= 5 || computerScore >= 5) {
+      return;
+    }
+    game(button.id);
+    })
+  );
+
 function getComputerChoice () {
 
   // Generate random number between 0 and 2
@@ -15,19 +35,19 @@ function getComputerChoice () {
 
 }
 
-function playRound (playerSelection, computerSelection) {
+function playRound (computerSelection, playerSelection) {
 
   // Accept two inputs (ignoring player case) and decide winner of the game
   // Default to incredulous query if 'rock', 'paper', or 'scissors isn't chosen
   // Return an array [win/lose/tie message, player win counter, computer win counter]
 
   if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
-    return ['It\'s a tie! Go again!', 0, 0]
+    return ['It\'s a tie! Throw again for the fate of (a) universe!', 0, 0]
   } else if (playerSelection.toLowerCase() === 'rock') {
     if (computerSelection === 'Paper') {
       return ['You lose! Paper beats Rock!', 0, 1]
     } else {
-      return ['You win! Rock beats Scissors', 1, 0]
+      return ['You win! Rock beats Scissors!', 1, 0]
     }
   } else if (playerSelection.toLowerCase() === 'paper') {
     if (computerSelection === 'Rock') {
@@ -39,7 +59,7 @@ function playRound (playerSelection, computerSelection) {
     if (computerSelection === 'Rock') {
       return ['You lose! Rock beats Scissors!', 0, 1]
     } else {
-      return ['You win! Scissors beats Paper', 1, 0]
+      return ['You win! Scissors beats Paper!', 1, 0]
     }
   } else {
     return ['Do you seriously not know how to play Rock Paper Scissors? Choose Rock, Paper, or Scissors (Dynamite is cheating btw). Computer gets a point by technicality.', 0, 1]
@@ -47,7 +67,31 @@ function playRound (playerSelection, computerSelection) {
 
 }
 
-function game() {
+function game(playerSelection) {
+
+  let computerSelection = getComputerChoice();
+
+  let result = playRound(computerSelection, playerSelection);
+
+  playerScore += result[1];
+  computerScore += result[2];
+
+  playerTotal.textContent = playerScore;
+  computerTotal.textContent = computerScore;
+  log.innerText += `\n${result[0]}`;
+
+  if (playerScore >= 5) {
+    log.innerText += `\nYou win! Congrats!`;
+  }
+
+  if (computerScore >= 5) {
+    log.innerText += `\nYou lose! Loser!`
+  }
+}
+
+// Old code for game played in console below
+
+/* function game() {
 
   // Iterate five rounds, compile win records, report results
 
@@ -89,5 +133,5 @@ function game() {
 
 }
 
-game()
+game() */
 
