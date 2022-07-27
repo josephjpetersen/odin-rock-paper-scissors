@@ -60,7 +60,7 @@ button:hover {
 .credits {
   display: flex;
   gap: 33px;
-  margin: 0px 33px 0px 0px;
+  margin: 0;
 }
 
 a {
