@@ -14,7 +14,7 @@ allButtons.forEach((button) =>
     if (playerScore >= 5 || computerScore >= 5) {
       return;
     }
-    game(button.id);
+    playGame(button.id);
     })
   );
 
@@ -67,7 +67,9 @@ function playRound (computerSelection, playerSelection) {
 
 }
 
-function game(playerSelection) {
+function playGame(playerSelection) {
+
+  // Call playRound, tabulate results of round, and update text based on results
 
   let computerSelection = getComputerChoice();
 
